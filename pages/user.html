@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User@ASSA</title>
+    <meta name="description" content="Admin Dashboard for CIA operations" />
+    <meta name="theme-color" content="#0d1117" />
+    <link rel="stylesheet" href="../css/admin.css" />
+    <!-- Include a modern icon if desired -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1>User@ASSA</h1>
+        <!-- Future nav links -->
+        <ul>
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Operations</a></li>
+          <li><a href="#">Reports</a></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main>
+      <section>
+        <h2>Welcome, Agent</h2>
+        <p>Select an option from the navigation above to begin.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Australian Secure Services Administration - Confidential</p>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <script src="../scripts/script.js"></script>
+    <script src="../scripts/sessionExpiry.js"></script>
+    <script>
+      const { data: { session } } = await supabase.auth.getSession();
+
+      if (!session) {
+        window.location.href = '../index.html'; // redirect if not logged in
+      } else {
+        // Optionally, display user info
+        console.log('Logged in user:', session.user.email);
+      }
+    </script>
+  </body>
+</html>

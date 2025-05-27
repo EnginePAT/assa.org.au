@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin@ASSA</title>
+    <meta name="description" content="Admin Dashboard for CIA operations" />
+    <meta name="theme-color" content="#0d1117" />
+    <link rel="stylesheet" href="../css/admin.css" />
+    <!-- Include a modern icon if desired -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1>Admin@ASSA</h1>
+        <!-- Future nav links -->
+        <ul>
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Operations</a></li>
+          <li><a href="#">Reports</a></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main>
+      <section>
+        <h2>Welcome, Agent</h2>
+        <p>Select an option from the navigation above to begin.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Australian Secure Services Administration - Confidential</p>
+    </footer>
+
+    <!-- Supabase client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/supabase.min.js"></script>
+  <script>
+    const supabase = window.supabase.createClient(
+      'https://your-project-id.supabase.co',
+      'your-anon-key'
+    );
+
+    async function checkSession() {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) {
+        window.location.href = '../index.html';
+      }
+    }
+
+    document.getElementById('logoutBtn').addEventListener('click', async () => {
+      await supabase.auth.signOut();
+      window.location.href = '../index.html';
+    });
+
+    checkSession();
+  </script>
+  </body>
+</html>

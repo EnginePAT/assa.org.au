@@ -1,0 +1,107 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0d1117;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #c9d1d9;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Login Container */
+.login-container {
+  background-color: #161b22;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 40px rgba(88, 166, 255, 0.15);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #30363d;
+}
+
+/* Header */
+.login-header h1 {
+  font-size: 1.8rem;
+  color: #58a6ff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.login-header .subtext {
+  font-size: 0.9rem;
+  color: #8b949e;
+  margin-bottom: 2rem;
+}
+
+/* Input fields */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1.2rem;
+  background-color: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  color: #c9d1d9;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #58a6ff;
+}
+
+/* Button styling */
+button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #238636;
+  border: none;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: inset 0 0 0 0 #2ea043;
+}
+
+button:hover {
+  background-color: #2ea043;
+}
+
+/* Error message */
+.error {
+  color: #ff5555;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* Footer Notice */
+.footer-note {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: #8b949e;
+}
+
+/* Optional link styling */
+a {
+  color: #58a6ff;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 2rem;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
