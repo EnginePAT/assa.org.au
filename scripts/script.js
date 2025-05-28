@@ -21,3 +21,25 @@ document.getElementById('loginForm').addEventListener('submit', async function (
     window.location.href = 'pages/user.html';
   }
 });
+
+let inactivityTime = () => {
+  let timer;
+  const logoutTime = 5 * 1000; // 15 minutes
+
+  const resetTimer = () => {
+    clearTimeout(timer);
+    localStorage.setItem("lastActivity", Date.now());
+    timer = setTimeout(logout, logoutTime);
+  };
+
+  const logout = async () => {
+    await supabaseClient.auth.signOut();
+    window.location.href = "index.html"; // or your login page
+  };
+
+  window.onload = resetTimer;
+  document.onmousemove = resetTimer;
+  document.onkeypress = resetTimer;
+};
+
+inactivityTime();
