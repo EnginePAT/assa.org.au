@@ -22,6 +22,16 @@ document.getElementById('loginForm').addEventListener('submit', async function (
   }
 });
 
+async function logout() {
+  const { error } = await supabaseClient.auth.signOut();
+  if (error) {
+    console.error('Logout error:', error.message);
+  } else {
+    // Redirect to login or home page if needed
+    window.location.href = '/login'; // change this to your actual login route
+  }
+}
+
 let inactivityTime = () => {
   let timer;
   const logoutTime = 5 * 1000; // 15 minutes
