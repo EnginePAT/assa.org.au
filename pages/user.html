@@ -48,16 +48,5 @@
         console.log('Logged in user:', session.user.email);
       }
     </script>
-    <script>
-    async function logout() {
-      const { error } = await supabaseClient.auth.signOut();
-      if (error) {
-        console.error('Logout error:', error.message);
-      } else {
-        // Redirect to login or home page if needed
-        window.location.href = '/login'; // change this to your actual login route
-      }
-    }
-</script>
   </body>
 </html>
