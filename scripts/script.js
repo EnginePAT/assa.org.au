@@ -28,7 +28,7 @@ async function logout() {
     console.error('Logout error:', error.message);
   } else {
     // Redirect to login or home page if needed
-    window.location.href = '/login'; // change this to your actual login route
+    window.location.href = 'index.html'; // change this to your actual login route
   }
 }
 
