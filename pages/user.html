@@ -19,7 +19,7 @@
           <li><a href="#">Dashboard</a></li>
           <li><a href="#">Operations</a></li>
           <li><a href="#">Reports</a></li>
-          <li><a href="#">Logout</a></li>
+          <li><a href="#" onClick="logout();">Logout</a></li>
         </ul>
       </nav>
     </header>
@@ -48,5 +48,16 @@
         console.log('Logged in user:', session.user.email);
       }
     </script>
+    <script>
+    async function logout() {
+      const { error } = await supabaseClient.auth.signOut();
+      if (error) {
+        console.error('Logout error:', error.message);
+      } else {
+        // Redirect to login or home page if needed
+        window.location.href = '/login'; // change this to your actual login route
+      }
+    }
+</script>
   </body>
 </html>
