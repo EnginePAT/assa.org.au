@@ -27,6 +27,18 @@ body {
   border: 1px solid #30363d;
 }
 
+/* ReLogin Container */
+.relogin-container {
+  background-color: #161b22;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 40px rgba(88, 166, 255, 0.15);
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid #30363d;
+}
+
 /* Header */
 .login-header h1 {
   font-size: 1.8rem;

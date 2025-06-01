@@ -19,7 +19,7 @@
           <li><a href="#">Dashboard</a></li>
           <li><a href="#">Operations</a></li>
           <li><a href="#">Reports</a></li>
-          <li><a href="#" onClick="logout();">Logout</a></li>
+          <li><a href="#">Logout</a></li>
         </ul>
       </nav>
     </header>
@@ -37,13 +37,14 @@
 
     <!-- Optional JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.6/dist/umd/supabase.min.js"></script>
+
     <script src="../scripts/script.js"></script>
     <script src="../scripts/sessionExpiry.js"></script>
-    <script>
-      const { data: { session } } = await supabase.auth.getSession();
+    <script type="module">
+      const { data: { session } } = await supabaseClient.auth.getSession();
 
       if (!session) {
-        window.location.href = 'index.html'; // redirect if not logged in
+        window.location.href = '../index.html'; // redirect if not logged in
       } else {
         // Optionally, display user info
         console.log('Logged in user:', session.user.email);

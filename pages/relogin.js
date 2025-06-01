@@ -19,7 +19,7 @@ if (loginForm) {
     if (error) {
       errorMsg.textContent = "Login failed: " + error.message;
     } else {
-      window.location.href = 'pages/user.html';
+      window.location.href = 'user.html';
     }
   });
 }
