@@ -43,7 +43,7 @@
       const { data: { session } } = await supabase.auth.getSession();
 
       if (!session) {
-        window.location.href = '../index.html'; // redirect if not logged in
+        window.location.href = 'index.html'; // redirect if not logged in
       } else {
         // Optionally, display user info
         console.log('Logged in user:', session.user.email);
